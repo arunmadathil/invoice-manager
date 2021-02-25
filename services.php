@@ -1,11 +1,10 @@
 <?php
+require "vendor/autoload.php";
 session_start();
 if(!$_SESSION['login'])
 {
 	header('location:http://vayaloram.in/admin');
 }
-include('../model/mysql_crud.php');
-include('../controller/master.php');
 $master = new Master();
 $dbs = new Database();
 $dbs->connect();

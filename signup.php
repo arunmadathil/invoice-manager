@@ -1,8 +1,10 @@
 <?php
 session_start();
+require "vendor/autoload.php";
 
-include 'model/dbConfig.php';
-include ('controller/controller.php');
+use App\Model\DBconfig;
+use App\Controller\UserController as User;
+
 $dbconfig = new DBconfig();
 $user = new User($dbconfig->connect_db());
 $result = "";

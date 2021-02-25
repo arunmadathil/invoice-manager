@@ -1,7 +1,8 @@
 <?php
 session_start();
-include 'model/dbConfig.php';
-include 'controller/controller.php';
+require "vendor/autoload.php";
+use App\Model\DBconfig;
+use App\Controller\UserController as User;
 $dbconfig = new DBconfig();
 $user = new User($dbconfig->connect_db());
 if(!$user->is_logedin())
